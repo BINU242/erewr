@@ -70,9 +70,8 @@ export const WidgetPage = () => {
   const widgetConfig = useMemo(() => config, []);
 
   return (
-    <LiFiWidget 
-      integrator="Your dApp/company name" 
-      config={widgetConfig} 
-    />
-  );
-};
+    <ClientOnly fallback={<WidgetSkeleton config={config} />}>
+      <LiFiWidget config={config} integrator="nextjs-example" />
+    </ClientOnly>
+  )
+}
