@@ -94,10 +94,10 @@ export function Widget() {
   return (
     <div>
       <ClientOnly fallback={<WidgetSkeleton config={config} />}>
-        <LiFiWidget config={config} integrator="your-company-name" />
+        <LiFiWidget config={config} integrator="Cryptosizer" />
       </ClientOnly>
       <footer style={{ textAlign: 'center', marginTop: '16px', fontSize: '14px', color: '#818084' }}>
-        Copyright 2025 in the footer is a demo company.
+        Copyright 2025 Cryptosizer.
       </footer>
     </div>
   )
