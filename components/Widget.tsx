@@ -5,7 +5,7 @@ import { LiFiWidget, WidgetSkeleton } from '@lifi/widget'
 import { ClientOnly } from './ClientOnly'
 
 export function Widget() {
-  const config = {
+ const config = {
   variant: "wide",
   appearance: "system",
   hiddenUI: ['poweredBy'],
@@ -38,6 +38,10 @@ export function Widget() {
     container: {
       boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.08)",
       borderRadius: "16px"
+    },
+    shape: {
+      borderRadius: 16,
+      borderRadiusSecondary: 16
     }
   }
 }
