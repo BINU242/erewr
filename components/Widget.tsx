@@ -1,20 +1,25 @@
 'use client'
 
-import type { WidgetConfig } from '@lifi/widget'
+import type { WidgetConfig, WidgetFeeConfig } from '@lifi/widget'
 import { LiFiWidget, WidgetSkeleton } from '@lifi/widget'
 import { ClientOnly } from './ClientOnly'
 
 export function Widget() {
+  // Proper fee configuration structure
+  const feeConfig: WidgetFeeConfig = {
+    name: "Cryptosizer Fee",
+    fee: 0.01, // 1% commission fee
+    showFeePercentage: true,
+    showFeeTooltip: true,
+    wallet: "0xE5AA835DD1ee433238A5F51E324F1EEbEE3eBd76"
+  };
+
   const config = {
     variant: "wide",
     subvariant: "split",
     appearance: "light",
     hiddenUI: ['poweredBy'],
-    // Add fee configuration for monetization
-    fee: 0.01, // 1% commission fee
-    feeConfig: {
-      wallet: "0xE5AA835DD1ee433238A5F51E324F1EEbEE3eBd76"
-    },
+    feeConfig: feeConfig,
     theme: {
       typography: {},
       container: {
