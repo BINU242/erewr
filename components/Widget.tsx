@@ -1,24 +1,15 @@
 'use client'
 
-import type { WidgetConfig, WidgetFeeConfig } from '@lifi/widget'
+import type { WidgetConfig } from '@lifi/widget'
 import { LiFiWidget, WidgetSkeleton } from '@lifi/widget'
 import { ClientOnly } from './ClientOnly'
 
 export function Widget() {
-  // Proper fee configuration structure (without wallet property)
-  const feeConfig: WidgetFeeConfig = {
-    name: "Cryptosizer Fee",
-    fee: 0.01, // 1% commission fee
-    showFeePercentage: true,
-    showFeeTooltip: true
-  };
-
   const config = {
     variant: "wide",
     subvariant: "split",
     appearance: "light",
     hiddenUI: ['poweredBy'],
-    feeConfig: feeConfig,
     theme: {
       typography: {},
       container: {
@@ -98,10 +89,10 @@ export function Widget() {
   return (
     <div>
       <ClientOnly fallback={<WidgetSkeleton config={config} />}>
-        <LiFiWidget config={config} integrator="Cryptosizer" />
+        <LiFiWidget config={config} integrator="nextjs-example" />
       </ClientOnly>
       <footer style={{ textAlign: 'center', marginTop: '16px', fontSize: '14px', color: '#818084' }}>
-        Copyright 2025 Cryptosizer.
+        Copyright 2025 in the footer is a demo company.
       </footer>
     </div>
   )
