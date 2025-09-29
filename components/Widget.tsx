@@ -1,4 +1,7 @@
-const config = {
+import { LiFiWidget, WidgetConfig } from '@lifi/widget';
+import { useMemo } from 'react';
+
+const config: WidgetConfig = {
   variant: "wide",
   subvariant: "split",
   appearance: "light",
@@ -56,6 +59,20 @@ const config = {
     }
   },
   walletConfig: {
-    onConnect: ()=>{e()}
+    onConnect: () => {
+      // Add your wallet connection logic here
+      console.log('Wallet connect triggered');
+    }
   }
-}
+};
+
+export const WidgetPage = () => {
+  const widgetConfig = useMemo(() => config, []);
+
+  return (
+    <LiFiWidget 
+      integrator="Your dApp/company name" 
+      config={widgetConfig} 
+    />
+  );
+};
