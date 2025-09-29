@@ -1,15 +1,8 @@
-'use client'
-
-import type { WidgetConfig } from '@lifi/widget'
-import { LiFiWidget, WidgetSkeleton } from '@lifi/widget'
-import { ClientOnly } from './ClientOnly'
-
-export function Widget() {
- const config = {
+const config = {
   variant: "wide",
   subvariant: "split",
   appearance: "light",
-  hiddenUI: ['poweredBy'], 
+  hiddenUI: ['poweredBy'],
   theme: {
     colorSchemes: {
       light: {
@@ -63,14 +56,6 @@ export function Widget() {
     }
   },
   walletConfig: {
-    onConnect: ()=>{e()},
-    usePartialWalletManagement: true
+    onConnect: ()=>{e()}
   }
-}
-
-  return (
-    <ClientOnly fallback={<WidgetSkeleton config={config} />}>
-      <LiFiWidget config={config} integrator="nextjs-example" />
-    </ClientOnly>
-  )
 }
