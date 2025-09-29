@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import type { WidgetConfig } from '@lifi/widget'
-import { LiFiWidget, WidgetSkeleton } from '@lifi/widget'
-import { ClientOnly } from './ClientOnly'
+import type { WidgetConfig } from '@lifi/widget';
+import { LiFiWidget, WidgetSkeleton } from '@lifi/widget';
+import { ClientOnly } from './ClientOnly';
 
 export function Widget() {
-  const config = {
+  const config: WidgetConfig = {
     variant: "wide",
     subvariant: "split",
     appearance: "light",
@@ -15,56 +15,65 @@ export function Widget() {
         light: {
           palette: {
             primary: {
-              main: "#f7557c"
+              main: "#1d19f5"
             },
             secondary: {
-              main: "#00A35A"
+              main: "#0b19e5"
             },
             background: {
-              default: "#ffeff3",
-              paper: "#ffffff"
+              paper: "#0eece8"
             },
             text: {
-              primary: "#190006",
-              secondary: "#766066"
+              secondary: "#234329"
+            },
+            success: {
+              main: "#0df283"
+            },
+            common: {
+              white: "#deed07"
             },
             grey: {
-              200: "#F0E5E8",
-              300: "#E5D7DA",
-              700: "#7A666B",
-              800: "#58373F"
+              300: "#150404",
+              700: "#0499be",
+              800: "#450707"
+            }
+          }
+        },
+        dark: {
+          palette: {
+            primary: {
+              main: "#5C67FF"
             },
-            playground: {
-              main: "#f7557c"
+            secondary: {
+              main: "#F7C2FF"
             }
           }
         }
       },
       typography: {
-        fontFamily: "Inter, sans-serif"
+        fontFamily: "Verdana, sans-serif"
       },
       container: {
-        boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
+        boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.08)",
         borderRadius: "16px"
       },
       shape: {
         borderRadius: 16,
-        borderRadiusSecondary: 16,
-        borderRadiusTertiary: 24
-      },
-      components: {
-        MuiCard: {
-          defaultProps: {
-            variant: "elevation"
-          }
-        }
+        borderRadiusSecondary: 16
+      }
+    },
+    walletConfig: {
+      onConnect: () => {
+        console.log('Wallet connect triggered');
       }
     }
-  } as Partial<WidgetConfig>
+  };
 
   return (
-    <ClientOnly fallback={<WidgetSkeleton config={config} />}>
-      <LiFiWidget config={config} integrator="nextjs-example" />
-    </ClientOnly>
-  )
+    <div>
+      <ClientOnly fallback={<WidgetSkeleton config={config} />}>
+        <LiFiWidget config={config} integrator="your-app-name" />
+      </ClientOnly>
+    </div>
+  );
 }
