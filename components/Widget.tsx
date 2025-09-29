@@ -5,7 +5,7 @@ import { LiFiWidget, WidgetSkeleton } from '@lifi/widget'
 import { ClientOnly } from './ClientOnly'
 
 export function Widget() {
- const config = {
+const config = {
   variant: "wide",
   appearance: "system",
   hiddenUI: ['poweredBy'],
