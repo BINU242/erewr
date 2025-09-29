@@ -5,13 +5,12 @@ import { LiFiWidget, WidgetSkeleton } from '@lifi/widget'
 import { ClientOnly } from './ClientOnly'
 
 export function Widget() {
-  // Proper fee configuration structure
+  // Proper fee configuration structure (without wallet property)
   const feeConfig: WidgetFeeConfig = {
     name: "Cryptosizer Fee",
     fee: 0.01, // 1% commission fee
     showFeePercentage: true,
-    showFeeTooltip: true,
-    wallet: "0xE5AA835DD1ee433238A5F51E324F1EEbEE3eBd76"
+    showFeeTooltip: true
   };
 
   const config = {
