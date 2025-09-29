@@ -10,6 +10,11 @@ export function Widget() {
     subvariant: "split",
     appearance: "light",
     hiddenUI: ['poweredBy'],
+    // Add fee configuration for monetization
+    fee: 0.01, // 1% commission fee
+    feeConfig: {
+      wallet: "0xE5AA835DD1ee433238A5F51E324F1EEbEE3eBd76"
+    },
     theme: {
       typography: {},
       container: {
@@ -89,10 +94,10 @@ export function Widget() {
   return (
     <div>
       <ClientOnly fallback={<WidgetSkeleton config={config} />}>
-        <LiFiWidget config={config} integrator="nextjs-example" />
+        <LiFiWidget config={config} integrator="your-company-name" />
       </ClientOnly>
       <footer style={{ textAlign: 'center', marginTop: '16px', fontSize: '14px', color: '#818084' }}>
-        Copyright 2025 Cryptosizer.
+        Copyright 2025 in the footer is a demo company.
       </footer>
     </div>
   )
