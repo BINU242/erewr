@@ -92,7 +92,7 @@ export function Widget() {
         <LiFiWidget config={config} integrator="nextjs-example" />
       </ClientOnly>
       <footer style={{ textAlign: 'center', marginTop: '16px', fontSize: '14px', color: '#818084' }}>
-        Copyright 2025 in the footer is a demo company.
+        Copyright 2025 Cryptosizer.
       </footer>
     </div>
   )
