@@ -1,6 +1,10 @@
-import { LiFiWidget, WidgetConfig } from '@lifi/widget';
-import { useMemo } from 'react';
+'use client'
 
+import type { WidgetConfig } from '@lifi/widget'
+import { LiFiWidget, WidgetSkeleton } from '@lifi/widget'
+import { ClientOnly } from './ClientOnly'
+
+export function Widget() {
 const config: WidgetConfig = {
   variant: "wide",
   subvariant: "split",
