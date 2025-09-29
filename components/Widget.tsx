@@ -30,7 +30,7 @@ export function Widget() {
               main: "#8700B8"
             },
             background: {
-              default: "#F9F5FF",
+              default: "#40e778",
               paper: "#FFFFFF"
             },
             text: {
@@ -87,8 +87,13 @@ export function Widget() {
   } as Partial<WidgetConfig>
 
   return (
-    <ClientOnly fallback={<WidgetSkeleton config={config} />}>
-      <LiFiWidget config={config} integrator="nextjs-example" />
-    </ClientOnly>
+    <div>
+      <ClientOnly fallback={<WidgetSkeleton config={config} />}>
+        <LiFiWidget config={config} integrator="nextjs-example" />
+      </ClientOnly>
+      <footer style={{ textAlign: 'center', marginTop: '16px', fontSize: '14px', color: '#818084' }}>
+        Copyright 2025 in the footer is a demo company.
+      </footer>
+    </div>
   )
 }
